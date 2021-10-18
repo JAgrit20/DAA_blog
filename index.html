@@ -88,7 +88,7 @@ Replace a character </p>
 
 		<div id="fh5co-portfolio">
 			<div class="fh5co-portfolio-item ">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/ps.png);   background-size: 700px 500px; !important;
+				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/ps.png);   background-size: 700px 400px; !important;
           "></div>
 				<div class="fh5co-portfolio-description">
 					<h2>Problem Statement </h2>
@@ -101,30 +101,56 @@ All of the above operations are of equal cost.</p>
 					<!-- <p><a href="#" class="btn btn-primary">Read the casetudy</a></p> -->
 				</div>
 			</div>
+			<div style="margin-top:5px">
 
+</div>
+<div style="margin-top:5px">
+.
+</div>
+		<br>
+	</br>
+			<!-- <div class="fh5co-portfolio-item fh5co-img-right"> -->
+				<!-- <div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/work_2.jpg);  background-size: 100px 100px; !important;"></div> -->
+				<div class="fh5co-portfolio-description">
+					<h2>What are the subproblems in this case? </h2>
+					<p>
+The idea is to process all characters one by one starting from either from left or right sides of both strings.
+Let us traverse from right corner, there are two possibilities for every pair of character being traversed.
+
+m: Length of str1 (first string)
+n: Length of str2 (second string)
+If last characters of two strings are same, nothing much to do. Ignore last characters and get count for remaining strings. So we recur for lengths m-1 and n-1.
+Else (If last characters are not same), we consider all operations on ‘str1’, consider all three operations on last character of first string, recursively compute minimum cost for all three operations and take minimum of three values.
+Insert: Recur for m and n-1
+Remove: Recur for m-1 and n
+Replace: Recur for m-1 and n-1
+Below is implementation of above Naive recursive solution.</p>
+					<!-- <p><a href="#" class="btn btn-primary">Read the casetudy</a></p> -->
+				</div>
+			<!-- </div> -->
 		<div id="fh5co-portfolio">
-			<div class="fh5co-portfolio-item ">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/work_1.jpg);"></div>
-				<div class="fh5co-portfolio-description">
-					<h2>Project First</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-					<p><a href="#" class="btn btn-primary">Read the casetudy</a></p>
-				</div>
-			</div>
 			<div class="fh5co-portfolio-item fh5co-img-right">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/work_2.jpg);"></div>
+				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/table.png);  background-size: 600px 400px; !important;"></div>
 				<div class="fh5co-portfolio-description">
-					<h2>Project Second</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-					<p><a href="#" class="btn btn-primary">Read the casetudy</a></p>
+					<h2>Tabulation Approach</h2>
+					<p>Tabulation is the most optimized solution and works in a bottom-up approach, it comes after we have done memoization. Since it is quite clear that this problem has dependencies on smaller problems discussed in the above section.
+						So, Before calculating f(i,j) where f is the editDistance function and i, j are the respective indices pointer on the two strings, it would be good if we calculate f(i, j-1), f(i-1, j) and f(i-1, j-1). Refer to the below structure</p>
+					<!-- <p><a href="#" class="btn btn-primary">Read the casetudy</a></p> -->
 				</div>
 			</div>
+
 			<div class="fh5co-portfolio-item ">
-				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/work_3.jpg);"></div>
+				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(images/codep.png); background-size: 600px 400px; !important;"></div>
 				<div class="fh5co-portfolio-description">
-					<h2>Project Third</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-					<p><a href="#" class="btn btn-primary">Read the casetudy</a></p>
+					<h2>Pseudo Code</h2>
+					<p>Complexity Analysis
+						<br>
+
+Time Complexity: O(n²) <br>
+</br>
+
+Space Complexity: O(n²).</p>
+					<!-- <p><a href="#" class="btn btn-primary">Read the casetudy</a></p> -->
 				</div>
 			</div>
 			<div class="fh5co-portfolio-item fh5co-img-right">
