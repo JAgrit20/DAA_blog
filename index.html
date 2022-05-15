@@ -361,6 +361,44 @@ Replace a character </p> -->
 			</div>
 		</div>
 	</div> -->
+													       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#btnShow').click(function(){
+        $("#dialog").dialog({
+        height: 600,
+        width: 1000,
+        show: 'fold',
+        modal: true
+        });
+
+        var toolbar = "#toolbar=0";
+
+        //pdf
+        //$("#frame").attr("src", "pdf_file_url.pdf"+toolbar);
+        //image
+        //$("#frame").attr("src", "image_file_url.jpeg"+toolbar);
+
+        //document
+        $("#frame").attr("src", "https://docs.google.com/gview?embedded=true&url=doc_file_url.docx");
+
+        //excel
+
+      // $("#frame").attr("src", "https://docs.google.com/gview?embedded=true&url=excel_file_url.xlsx");
+
+    }); 
+    });
+</script>
+
+<a href="javascript:void(0)" id="btnShow">Click to open</a>
+<div id="dialog" style="display: none;">
+    <div>
+    <iframe id="frame" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-scripts allow-top-navigation allow-top-navigation-by-user-activation" style="height:100%;width:100%;border: 0px;"></iframe>
+    </div>
+</div>
 
 				<footer id="fh5co-footer">
 					<div class="container">
